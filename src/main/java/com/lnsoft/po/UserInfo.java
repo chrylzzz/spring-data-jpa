@@ -8,8 +8,11 @@ import java.io.Serializable;
  */
 @Entity
 @Table(name = "user_info")
-public class UserInfo implements Serializable{
+public class UserInfo implements Serializable {
 
+    /**
+     * 注意：如果db中的字段为 userName 那么@Column(name = "userName")解析的时候会加上变为user_Name,会自动加上_横杠
+     */
     @Id
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)//IDENTITY:主键类型，必须是int，long，short其中之一
